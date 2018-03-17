@@ -11,6 +11,7 @@ Feature: Tests for Home screen functionality
     When I press on Clear button
     Then Show All button should be disabled
 
+  @conversions
   Scenario Outline: Verify default conversion
     Given I land on Home screen
     When I type "<target>" to target text field
@@ -21,3 +22,10 @@ Feature: Tests for Home screen functionality
     | 2      | 24     |
     | 3      | 36     |
     | 9      | 106    |
+
+  Scenario: User able to add current conversion to Favovorites list
+    Given I land on Home screen
+    Then I press on Add to Favovorites icon
+    When I press on Menu icon
+    Then I press on Favovorite conversions
+    And I verify "Length" added to Favovorite conversions list
