@@ -29,3 +29,12 @@ Feature: Tests for Home screen functionality
     When I press on Menu icon
     Then I press on Favovorite conversions
     And I verify "Length" added to Favovorite conversions list
+
+  Scenario: User able to search by existing Conversion type
+    Given I land on Home screen
+    When I press on search icon
+    And I type "Temperature"
+    And I press return button on soft keyboard
+    Then I see "Temperature" as a current unit converter
+    Then Left Unit picker value should be "Celsius"
+    And Right Unit picker value should be "Fahrenheit"
