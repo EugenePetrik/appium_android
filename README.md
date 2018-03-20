@@ -7,3 +7,5 @@ Devices list - **`adb devices`**
 Run all cucumber scenarios - **`cucumber`**<br />
 
 Run cucumber scenario with specific tag - **`cucumber -t @tag_name`**<br />
+
+Check if there is step definitions - **`cucumber --dry-run`**<br />
