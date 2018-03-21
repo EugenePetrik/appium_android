@@ -53,7 +53,11 @@ Then(/^I press on Favovorite conversions$/) do
 end
 
 Then(/^I verify "([^"]*)" added to Favovorite conversions list$/) do |unit_type|
-  text(unit_type)
+  item_text = find_element(id: "favorites_item_hint").text
+
+  if unit_type != item_text
+    fail("Cannot find #{unit_type} in Favovorite list}")
+  end
 end
 
 When(/^I press on search icon$/) do
