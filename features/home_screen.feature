@@ -7,13 +7,13 @@ Feature: Tests for Home screen functionality
 
   Scenario: Show All button should be enabled at launch
     Given I land on Home screen
-    Then Show All button should be enabled
-    When I press on Clear button
     Then Show All button should be disabled
+    When I type "1" on application keyboard
+    Then Show All button should be enabled
 
   Scenario Outline: Verify default conversion
     Given I land on Home screen
-    When I type "<target>" to target text field
+    When I type "<target>" on application keyboard
     Then I should see result as "<result>"
     Examples:
       | target | result    |
