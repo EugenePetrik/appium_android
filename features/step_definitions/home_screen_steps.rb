@@ -24,11 +24,17 @@ When(/^I press on Clear button$/) do
 end
 
 When(/^I type "([^"]*)" to target text field$/) do |target|
-  puts "Target is #{target}"
+  # puts "Target is #{target}"
+  target.split("").each { |i| find_element(id: "keypad").find_element(xpath: "//android.widget.Button[@text = '#{i}']").click }
 end
 
 Then(/^I should see result as "([^"]*)"$/) do |result|
-  puts "Result is #{result}"
+  # puts "Result is #{result}"
+  value = find_element(id: "target_value").text
+
+  if value != result
+    fail("Expected value is #{result}, but actual value is #{value}")
+  end
 end
 
 Then(/^I press on Add to Favovorites icon$/) do
