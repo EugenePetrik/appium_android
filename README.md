@@ -8,7 +8,17 @@ Run all cucumber scenarios - **`cucumber`**<br />
 
 Run cucumber scenario with specific tag - **`cucumber -t @tag_name`**<br />
 
-Check if there is step definitions - **`cucumber --dry-run`**<br /><br />
+Run cucumber scenarios that has first OR second tag - **`cucumber -t '@tag_name1 or @tag_name2'`**<br />
+
+Run cucumber scenarios that has first AND second tags - **`cucumber -t @tag_name1 -t @tag_name2`**<br />
+
+Run cucumber scenarios using profile - **`cucumber -p profile_name`**
+
+Check if there is step definitions - **`cucumber --dry-run`**
+
+Add reports - **`cucumber --format html --out report.html`**
+
+Add reports in terminal and file - **`cucumber --format html --out report.html --format pretty`**<br /><br />
 
 
 **Appium commands:**
