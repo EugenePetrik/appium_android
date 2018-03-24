@@ -83,11 +83,15 @@ When(/^I select "([^"]*)" from left unit picker$/) do |value|
   find_in_list(value)
 end
 
+When(/^I select "([^"]*)" from right unit picker$/) do |value|
+  find_elements(id: "select_unit_spinner")[1].click
+  find_in_list(value)
+end
+
 When(/^I select "([^"]*)" from menu$/) do |value|
   text(value).click
 end
 
-When(/^I select "([^"]*)" from right unit picker$/) do |value|
-  find_elements(id: "select_unit_spinner")[1].click
-  find_in_list(value)
+When(/^I press on switch units button$/) do
+  find_element(id: "img_switch").click
 end

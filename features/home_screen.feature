@@ -57,3 +57,11 @@ Feature: Tests for Home screen functionality
     And I select "Cup" from right unit picker
     And I type "1" on application keyboard
     Then I should see result as "15.1416"
+
+  Scenario: User able to switch values
+    Given I land on Home screen
+    Then Left Unit picker value should be "Foot"
+    And Right Unit picker value should be "Centimeter"
+    When I press on switch units button
+    Then Left Unit picker value should be "Centimeter"
+    And Right Unit picker value should be "Foot"
