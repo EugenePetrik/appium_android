@@ -49,3 +49,11 @@ Feature: Tests for Home screen functionality
       | unit_type | amount | result  |
       | Inch      | 1      | 2.54    |
       | Link      | 1      | 20.1168 |
+
+  Scenario: User able to convert values
+    Given I land on Home screen
+    When I press on Menu icon
+    And I select "Volume" from menu
+    And I select "Cup" from right unit picker
+    And I type "1" on application keyboard
+    Then I should see result as "15.1416"
