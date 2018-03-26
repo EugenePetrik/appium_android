@@ -9,7 +9,12 @@ def caps
           app: (File.join(File.dirname(__FILE__), "PreciseUnitConversion.apk")),
           appPackage: "com.ba.universalconverter",
           appActivity: "MainConverterActivity",
-          newCommandTimeout: "3600"
+          newCommandTimeout: "3600",
+
+          appium_lib: {
+              wait: 20,
+              debug: false
+          }
       }
   }
 end
