@@ -61,3 +61,17 @@ Feature: Tests for Home screen functionality
     When I press on switch units button
     Then Left Unit picker value should be "Centimeter"
     And Right Unit picker value should be "Foot"
+
+  Scenario: User able to cleanup conversion history
+    When I press on Menu icon
+    And I select "History" from menu
+    Then I see "History" as a current unit converter
+    And I should see text "No history right now"
+    When I press on Menu icon
+    And I select "Length" from menu
+    And I type "1" on application keyboard
+    And I press on Menu icon
+    And I select "History" from menu
+    Then I verified that 1st result in history list is "Length"
+    When I press delete from history at 1st row
+    Then I should see text "No history right now"

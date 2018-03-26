@@ -71,7 +71,7 @@ When(/^I type "([^"]*)"$/) do |text|
 end
 
 When(/^I press return button on soft keyboard$/) do
-  Appium::TouchAction.new.tap(x: 1010.0, y: 1700.0, count: 1).perform
+  Appium::TouchAction.new.tap(x: 0.99, y: 0.99, count: 1).perform
 end
 
 Then(/^I see "([^"]*)" as a current unit converter$/) do |current_unit|
@@ -94,4 +94,26 @@ end
 
 When(/^I press on switch units button$/) do
   find_element(id: "img_switch").click
+end
+
+Then(/^I should see text "([^"]*)"$/) do |value|
+  text(value)
+end
+
+Then(/^I verified that (\d+)(?:st|nd|rd|th?) result in history list is "([^"]*)"$/) do |index, text|
+  parent_element = find_element(id: "history_conversion_list")
+  array_of_elements = parent_element.find_elements(id: "history_single_list")
+
+  actual_text = array_of_elements[index.to_i - 1].find_element(id: "history_item_hint").text
+
+  if actual_text != text
+    fail("Expected text id #{text}, actual text is #{actual_text}")
+  end
+end
+
+When(/^I press delete from history at (\d+)(?:st|nd|rd|th?) row$/) do |index|
+  parent_element = find_element(id: "history_conversion_list")
+  array_of_elements = parent_element.find_elements(id: "history_single_list")
+
+  array_of_elements[index.to_i - 1].find_element(id: "deleteIcon").click
 end
