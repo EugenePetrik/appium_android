@@ -4,17 +4,17 @@
 
 Devices list - **`adb devices`**
 
-Run all cucumber scenarios - **`cucumber`**<br />
+Run all cucumber scenarios - **`cucumber`**
 
-Run cucumber scenario with specific tag - **`cucumber -t @tag_name`**<br />
-
-Run cucumber scenarios that has first OR second tag - **`cucumber -t '@tag_name1 or @tag_name2'`**<br />
-
-Run cucumber scenarios that has first AND second tags - **`cucumber -t @tag_name1 -t @tag_name2`**<br />
-
-Run cucumber scenarios using profile - **`cucumber -p profile_name`**
+Run cucumber scenario with specific tag - **`cucumber -t @tag_name`**
 
 Check if there is step definitions - **`cucumber --dry-run`**
+
+Run cucumber scenarios that has first OR second tag - **`cucumber -t '@tag_name1 or @tag_name2'`**
+
+Run cucumber scenarios that has first AND second tags - **`cucumber -t @tag_name1 -t @tag_name2`**
+
+Run cucumber scenarios using profile - **`cucumber -p profile_name`**
 
 Add reports - **`cucumber --format html --out report.html`**
 
