@@ -1,4 +1,5 @@
 require "appium_lib"
+require "pry"
 
 def caps
   {
