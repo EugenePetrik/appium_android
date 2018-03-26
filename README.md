@@ -1,6 +1,7 @@
 **Install gems:**
 - **`gem install appium_lib`**
-- **`gem install cucumber`**<br /><br />
+- **`gem install cucumber`**
+- **`gem install pry`**<br /><br />
 
 Devices list - **`adb devices`**
 
